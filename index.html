@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo Table</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./js/DataTables/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"/>
+    <link href="./js/Content/Selectize/css/selectize.default.css" rel="stylesheet" />
+    
+
+    <script src="./node_modules/browser-es-module-loader/dist/babel-browser-build.js"></script>
+    <script src="./node_modules/browser-es-module-loader/dist/browser-es-module-loader.js"></script>
+
+     <script type="text/javascript" src="./js/DataTables/Scripts/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="./js/DataTables/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script type="text/javascript" src="./js/DataTables/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    
+    <script type="text/javascript" src="index.js"></script>
+    <script type="module" src="./src/js/fake-api.js"></script>
+      <script>
+        var loader = new BrowserESModuleLoader();
+
+        // relative path or URL syntax is necessary as plain resolution throws
+        loader.import('./src/js/fake-api.js').then(function(m) {
+         console.log(m);
+  });
+</script>
+      <style>
+       .table.dataTable thead th, table.dataTable tbody th, table.dataTable tbody td {
+            background-color:#343434;
+            color:#eeeeee;
+           
+        }
+        .table.dataTable thead th, table.dataTable tbody th, table.dataTable tbody td:hover {
+            background-color:#000000;
+            color:#eeeeee;
+        }
+          
+          
+      </style>
+  </head>
+
+  <body>
+    <div style="background-color:#343434;color:#eeeeee;display:block;">Incidents</div>
+    <div class="demoTablePanel" style="background-color:#343434;color:#eeeeee;">
+        <table cellpadding="0" cellspacing="0" border="0" class="table demoTable display" style="background-color:#343434;color:#eeeeee" id="demoTable">
+            <thead class="demoTable_head" style="background-color:#343434;color:#eeeeee;">
+                <tr>
+                    <th ></th>
+                    <th >Incident Name</th>
+                    <th >Date and Time</th>
+                    <th >Priority</th>
+                    <th >Location Name</th>
+                </tr>                
+            </thead>
+            
+        </table>
+    </div>
+  </body>
+</html>
